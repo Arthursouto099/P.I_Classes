@@ -36,13 +36,9 @@ export class CommonUserModel {
             const insert: string = "Insert into common_user  (id_user, username, email, password, birth, profile_image, cpf, Fk_address, contact, gender, emergency_contact) values  ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11 ) RETURNING * "
            
             const resultAddress = await pool.query(insertAddress, [address.id_address, address.street, address.number, address.cep, address.state, address.city])
-        
-                const result = await pool.query(insert, [this.id_user, this.username, this.email, this.password, this.birth, this.profileImage, this.cpf, address.id_address, this.contact, this.gender, this.emergencyContact])
-            
-           
+            const result = await pool.query(insert, [this.id_user, this.username, this.email, this.password, this.birth, this.profileImage, this.cpf, address.id_address, this.contact, this.gender, this.emergencyContact])
             return {ok: true};
-
-
+            
         }
         catch(error) {
             console.log(error)
