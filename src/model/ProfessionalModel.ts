@@ -20,24 +20,4 @@ export class ProfessionalModel extends CommonUserModel {
         this.workload = workload;
         
     }
-
-
-    public   async insertProffesional(): Promise<{ok: boolean}> {
-
-        try {
-            const insertProffesional: string = `insert into professional(id_user, crm, specialty, qualification, contact, workload) values(${this.id_proffesional}, ${this.crm}, ${this.specialty}, ${this.qualification}, ${this.contact}, ${this.workload})`
-            const result = await pool.query(insertProffesional);
-            return {ok: true};
-        }
-
-        catch {
-            console.error()
-            return {ok: false}
-        }
-  
-
-    }
-
-
-
 }

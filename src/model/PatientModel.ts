@@ -1,6 +1,7 @@
 import { CommonUserModel } from "./CommonUserModel";
 import { Address } from "./AddressModel";
 import pool from "../config/db";
+import { QueryResult } from "pg";
 
 export class PatientModel extends CommonUserModel {
 
@@ -11,19 +12,5 @@ export class PatientModel extends CommonUserModel {
         this.id_patient = id_patient;
     }
 
-    public   async insertPatient(): Promise<{ok: boolean}> {
-
-        try {
-            const insertPatient: string = `insert into patient (id_user) values(${this.id_user})`
-            const result = await pool.query(insertPatient);
-            return {ok: true};
-        }
-
-        catch {
-            console.error()
-            return {ok: false}
-        }
-  
-
-    }
+    
 }
