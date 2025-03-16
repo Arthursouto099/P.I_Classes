@@ -1,15 +1,15 @@
 import { Address } from "./AddressModel";
-import pool from "../config/db";
+
 
 export class CommonUserModel {
     public id_user: number;
     public username: string;
     public email: string;
-    private password: string;
+    private _password: string;
     public birth: Date;
     public profileImage: string;
-    private cpf: string;
-    private address: Address | null;
+    private _cpf: string;
+    private _address: Address | null;
     public contact: string;
     public gender: string;
     public emergencyContact: string;
@@ -19,14 +19,39 @@ export class CommonUserModel {
         this.id_user = id_user;
         this.username = username;
         this.email = email;
-        this.password = password;
+        this._password = password;
         this.birth = birth;
         this.profileImage = profileImage;
-        this.cpf = cpf;
-        this.address = address;
+        this._cpf = cpf;
+        this._address = address;
         this.contact = contact;
         this.gender = gender;
         this.emergencyContact = emergencyContact;
+    }
+
+    public getPassword(): string{
+        return this._password;
+    }
+
+    public setPassword(password: string): void {
+        this._password = password;
+    }
+
+
+    public getCpf(): string {
+        return this._cpf;
+    }
+
+    public setCpf(cpf: string): void {
+        this._cpf = cpf
+    }
+
+    public getAddress(): Address |  null {
+        return this._address;
+    }
+
+    public setAddress(address: Address): void {
+        this._address = address;
     }
 
 

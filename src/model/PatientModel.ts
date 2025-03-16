@@ -1,7 +1,7 @@
 import { CommonUserModel } from "./CommonUserModel";
 import { Address } from "./AddressModel";
-import pool from "../config/db";
-import { QueryResult } from "pg";
+
+
 
 export class PatientModel extends CommonUserModel {
 
