@@ -17,5 +17,8 @@
     "url": "https://github.com/Arthursouto099/P.I_Classes/issues"
   },
   "homepage": "https://github.com/Arthursouto099/P.I_Classes#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
 }
